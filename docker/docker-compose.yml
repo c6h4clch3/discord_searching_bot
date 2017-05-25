@@ -1,0 +1,10 @@
+version: "2"
+services:
+  data:
+    build: ./data
+    volumes:
+      - ../:/data
+  ruby:
+    build: ./ruby
+    volumes_from:
+      - data
