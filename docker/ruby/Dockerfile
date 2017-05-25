@@ -5,8 +5,8 @@ RUN bundler -v
 RUN mkdir -p /data
 VOLUME ["/data"]
 WORKDIR /data
-RUN pwd
-RUN ls -al
+VOLUME ["/bundle"]
+ENV BUNDLE_PATH=/bundle
 
 ENTRYPOINT ["bundle"]
 CMD ["exec ruby -h"]
